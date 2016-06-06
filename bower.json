@@ -1,0 +1,22 @@
+{
+  "name": "curso-angular-fafiman",
+  "version": "1.0",
+  "homepage": "https://github.com/mantai77/learnAngular",
+  "authors": [
+    "ErichMantai <erickmantai@gmail.com>"
+  ],
+  "description": "Curso de AngularJS na Fafiman em Mandaguari",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.6",
+    "bootstrap": "~3.3.6",
+    "angular-route": "^1.5.6"
+  }
+}

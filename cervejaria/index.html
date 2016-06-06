@@ -1,0 +1,42 @@
+<section class="panel panel-primary">
+            <header class="panel-heading">Cervejarias</header>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <label for="beer">Cervejaria</label>
+                  <input type="text" class="form-control" data-ng-model="cervejaria.nome" id="beer" placeholder="Eisenbahn">
+                </div>
+                <button type="button" class="btn btn-success" data-ng-click="salvarCervejaria(cervejaria)">Salvar cervejaria</button>
+                <button type="reset" class="btn btn-warning">Limpar campos</button>
+              </form>              
+              <hr>
+
+                <div class="progress" ng-show="loading">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                    </div>
+                 </div>
+
+              <table class="table table-bordered table-hover table-striped" ng-show="!loading">
+                <thead>
+                  <tr>
+                    <th>Nome da cervejaria</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-ng-repeat="cervejaria in cervejarias">
+                    <td>{{ cervejaria.nome }}</td>
+                  <td>
+                        <button class="btn btn-warning btn-xs" ng-click="popularForm(cervejaria)">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger btn-xs" ng-click="deletarCervejaria(cervejaria)">
+                          <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+          </section>

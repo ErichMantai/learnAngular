@@ -1,0 +1,42 @@
+<section class="panel panel-primary">
+            <header class="panel-heading">Categorias</header>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <label for="beer">Cerveja</label>
+                  <input type="text" class="form-control" data-ng-model="cerveja.nome" id="beer" placeholder="Eisenbahn">
+                </div>
+                <div class="form-group">
+                  <label for="volume">Volume de Alcool</label>
+                  <input type="number" min="0" max="100" data-ng-model="cervejaria.volume" class="form-control" id="volume" placeholder="5">
+                </div>
+                <button type="button" class="btn btn-success" data-ng-click="salvarCerveja(cerveja)">Salvar cerveja</button>
+                <button type="reset" class="btn btn-warning">Limpar campos</button>
+              </form>              
+              <hr>
+              <table class="table table-bordered table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Nome da cerveja</th>
+                    <th>Volume de alcool</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-ng-repeat="cerveja in cervejas">
+                    <td>{{ cerveja.nome }}</td>
+                    <td>{{ cerveja.volume }}%</td>
+                    <td>
+                        <button class="btn btn-warning btn-xs" ng-click="popularForm($index, cerveja)">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger btn-xs" ng-click="deletarCerveja($index, cerveja)">
+                          <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+          </section>
